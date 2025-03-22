@@ -1,0 +1,8 @@
+variable "dev_names"{
+    type = list
+    default = ["Alice","Bob","Charles"]
+}
+resource "aws_iam_user" "lb"{
+    name = "developer-user-${count.index}"
+    count = 3 
+}
